@@ -4,33 +4,33 @@ import { register, logIn, logOut, refreshUser } from './index';
 const authInitialState = {
   user: { name: null, email: null },
   token: null,
-  isLoggedIn: null,
-  isRefreshing: null,
+  isLoggedIn: false,
+  isRefreshing: false,
 };
 
 const authSlice = createSlice({
-  name: auth,
+  name: 'auth',
   initialState: authInitialState,
 
   extraReducers: builder => {
     builder
-      .addCase(register.fullfilled, (state, action) => {
+      .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.token = token.payload.token;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logIn.fullfilled, (state, action) => {
+      .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.token = token.payload.token;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logOut.fullfilled, state => {
+      .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
       })
       .addCase(refreshUser.pending, state => (state.isRefreshing = true))
-      .addCase(refreshUser.fullfilled, (state, action) => {
+      .addCase(refreshUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
