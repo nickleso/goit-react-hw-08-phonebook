@@ -1,6 +1,8 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Navigation } from 'components/Navigation';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <header
@@ -9,14 +11,12 @@ const Layout = () => {
           justifyContent: 'space-around',
         }}
       >
-        <NavLink to="/">Phonebook</NavLink>
-        <NavLink to="register">Register</NavLink>
-        <NavLink to="login">Log in</NavLink>
+        <Navigation />
       </header>
 
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
-
-export default Layout;

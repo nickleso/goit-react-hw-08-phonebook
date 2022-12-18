@@ -1,44 +1,45 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Layout } from 'pages/Layout';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 
-import { ContactForm } from './ContactForm';
-import { ContactList } from './ContactList';
-import { Filter } from './Filter';
-import css from './App.module.css';
-import Home from 'pages/Home';
-import Layout from 'pages/Layout';
-import Register from 'pages/Register';
-import Login from 'pages/Login';
+const HomePage = lazy(() => import('../pages/Home'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export default function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="register" element={<Register />} />
-          <Route path="login" element={<Login />} />
+          <Route index element={<HomePage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
         </Route>
-
-        {/* <main className={css.phonebook}>
-          <div className={css.container}>
-            <section className={css.phonebook__wrap}>
-              <h1 className={css.phonebook__title}>Phonebook</h1>
-              <ContactForm />
-            </section>
-          </div>
-
-          <div className={css.container}>
-            <section className={css.contacts__wrap}>
-              <h2 className={css.phonebook__title}>Contacts</h2>
-              <Filter />
-            </section>
-          </div>
-
-          <div className={css.container}>
-            <ContactList />
-          </div>
-        </main> */}
       </Routes>
     </>
   );

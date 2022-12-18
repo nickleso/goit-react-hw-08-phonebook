@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import css from './App.module.css';
 import { register } from 'redux/auth';
+import css from './App.module.css';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -28,15 +28,21 @@ const RegisterForm = () => {
       <form onSubmit={onFormSubmit}>
         <label className={css.form__label}>
           Username
-          <input type="text" name="name" />
+          <input
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+          />
         </label>
         <label className={css.form__label}>
           Email
-          <input type="email" name="email" />
+          <input type="email" name="email" required />
         </label>
         <label className={css.form__label}>
           Password
-          <input type="password" name="password" />
+          <input type="password" name="password" required />
         </label>
         <button className={css.form__button} type="submit">
           Register

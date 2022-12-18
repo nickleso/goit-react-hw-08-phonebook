@@ -12,7 +12,7 @@ export const ContactForm = () => {
     const form = event.target;
     const name = form.elements.name.value;
     const normalizedName = name.toLowerCase();
-    const phone = form.elements.phone.value;
+    const number = form.elements.number.value;
 
     const checkByName = contactList.find(
       contact => contact.name.toLowerCase() === normalizedName
@@ -25,7 +25,7 @@ export const ContactForm = () => {
 
     const newContact = {
       name,
-      phone,
+      number,
     };
 
     dispatch(addContact(newContact));
@@ -48,7 +48,7 @@ export const ContactForm = () => {
         Phone
         <input
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
