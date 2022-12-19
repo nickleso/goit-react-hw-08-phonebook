@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts, getContacts, getFilter } from '../redux/contacts';
 import { Contacts } from './Contacts';
-import css from './App.module.css';
+import css from './App.module.scss';
 
 export const ContactList = () => {
   const dispatch = useDispatch();

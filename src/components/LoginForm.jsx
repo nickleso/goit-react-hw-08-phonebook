@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth';
-import css from './App.module.css';
+import { BiPencil } from 'react-icons/bi';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -17,27 +17,47 @@ const LoginForm = () => {
         password,
       })
     );
-    console.log('login');
     form.reset();
   }
 
   return (
-    <div>
-      <h2>Log in</h2>
-      <form onSubmit={onFormSubmit}>
-        <label className={css.form__label}>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        <label className={css.form__label}>
-          Password
-          <input type="password" name="password" required />
-        </label>
-        <button className={css.form__button} type="submit">
-          Log in
-        </button>
-      </form>
-    </div>
+    <main>
+      <section className="section">
+        <div className="container registration">
+          <h2 className="registration__title">Log in</h2>
+          <form className="registration__form" onSubmit={onFormSubmit}>
+            <label className="registration__label">
+              Email
+              <input
+                className="registration__input"
+                type="email"
+                name="email"
+                placeholder="Email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="example: characters@characters.domain"
+                required
+              />
+            </label>
+            <label className="registration__label">
+              Password
+              <input
+                className="registration__input"
+                type="password"
+                name="password"
+                placeholder="Password"
+                pattern="\w{7,16}"
+                title="Password requires 8-16 characters"
+                required
+              />
+            </label>
+            <button className="registration__button" type="submit">
+              Log in{' '}
+              <BiPencil style={{ verticalAlign: '-3px', paddingLeft: '4px' }} />
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 };
 

@@ -10,7 +10,9 @@ export const Navigation = () => {
 
   return (
     <>
-      <NavLink to="/">Phonebook</NavLink>
+      <NavLink className="nav-link" to="/">
+        Phonebook
+      </NavLink>
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </>
   );

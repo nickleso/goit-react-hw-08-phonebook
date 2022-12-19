@@ -5,14 +5,11 @@ import { Navigation } from 'components/Navigation';
 export const Layout = () => {
   return (
     <>
-      <header
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-        }}
-      >
-        <Navigation />
-      </header>
+      <div className="container">
+        <header className="header">
+          <Navigation />
+        </header>
+      </div>
 
       <Suspense fallback={null}>
         <Outlet />

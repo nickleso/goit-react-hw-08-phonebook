@@ -1,14 +1,11 @@
 const Home = () => {
   return (
     <main>
-      <h1
-        style={{
-          paddingTop: '100px',
-          textAlign: 'center',
-        }}
-      >
-        Home page
-      </h1>
+      <section className="section">
+        <div className="container home">
+          <h1>Home page</h1>
+        </div>
+      </section>
     </main>
   );
 };

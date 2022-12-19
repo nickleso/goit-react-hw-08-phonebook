@@ -9,10 +9,19 @@ export const UserMenu = () => {
 
   return (
     <>
-      <NavLink to="contacts">Contacts</NavLink>
-      <div>
-        <p>Welcome, {user.name}</p>
-        <button type="button" onClick={() => dispatch(logOut())}>
+      <NavLink className="nav-link" to="contacts">
+        Contacts
+      </NavLink>
+      <div className="login">
+        <p className="login__user">
+          Welcome,<span>{user.name}</span>
+        </p>
+
+        <button
+          type="button"
+          className="login__button"
+          onClick={() => dispatch(logOut())}
+        >
           Logout
         </button>
       </div>
