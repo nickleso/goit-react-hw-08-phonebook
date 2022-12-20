@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../redux/contacts';
-import css from '../styles/App.module.scss';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 export const Contacts = ({ contact }) => {
   const dispatch = useDispatch();
@@ -8,15 +8,17 @@ export const Contacts = ({ contact }) => {
 
   return (
     <>
-      <p>
-        {contact.name}: <span>{contact.number}</span>
-      </p>
+      <div className="contactsList__wrap">
+        <p className="contactsList__name">{contact.name}:</p>
+        <a href="tel:contact.number">{contact.number}</a>
+      </div>
       <button
-        className={css.contact__button}
+        className="contactsList__button"
         type="button"
         onClick={onDeleteContact}
       >
-        Delete
+        Del
+        <TiDeleteOutline style={{ verticalAlign: '-4px' }} />
       </button>
     </>
   );

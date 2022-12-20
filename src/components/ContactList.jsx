@@ -29,9 +29,9 @@ export const ContactList = () => {
   return (
     <div className="contactsList">
       <h2 className="contactsList__title">Contacts list</h2>
-      <ul className="contactsList__form">
+      <ul className="contactsList__list">
         {visibleContacts.map(contact => (
-          <li className="contactsList__label" key={contact.id}>
+          <li className="contactsList__item" key={contact.id}>
             <Contacts contact={contact} />
           </li>
         ))}

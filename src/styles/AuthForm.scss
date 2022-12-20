@@ -1,15 +1,19 @@
-.contactsList {
+.registration {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 24px;
+  padding: 24px 0;
 
   background-color: var(--white);
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
   @media screen and (min-width: 768px) {
-    align-items: flex-start;
+    background-image: url(../images/standing-man.png);
+    background-repeat: no-repeat;
+    // background-size: contain;
+    background-position-y: bottom;
+    background-position-x: 110%;
   }
 
   &__title {
@@ -20,62 +24,50 @@
     }
   }
 
-  &__list {
+  &__form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     width: 335px;
     padding: 16px;
-
-    @media screen and (min-width: 768px) {
-      width: 100%;
-      // padding: 0;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      // align-items: flex-end;
-    }
   }
 
-  &__item {
-    width: 335px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // flex-direction: column;
-    gap: 8px;
+  &__input {
+    display: inline-flex;
+    font-family: 'Patrick Hand';
     font-size: 18px;
-    line-height: 1.27;
+    line-height: 1.33;
 
     @media screen and (min-width: 768px) {
       font-size: 24px;
-      padding-bottom: 0;
     }
   }
 
-  &__wrap {
+  &__label {
     display: flex;
     flex-direction: column;
-  }
+    gap: 8px;
+    font-size: 18px;
+    line-height: 1.27;
+    padding-bottom: 24px;
 
-  &__name {
-    // display: inline-flex;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   &__button {
-    height: 38px;
-    padding: 0 6px;
     align-items: center;
-    color: var(--primary-color);
-    background-color: var(--white);
+    // min-width: 335px;
     transition: color 250ms var(--timing-function);
     transition: background-color 250ms var(--timing-function);
-    border: 2px solid var(--primary-color);
-    border-radius: 32px;
 
     &:hover {
-      color: var(--white);
-      background-color: var(--primary-color);
+      color: var(--primary-color);
+      background-color: var(--white);
     }
+  }
+
+  &__icon {
+    fill: var(--white);
   }
 }

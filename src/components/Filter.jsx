@@ -13,6 +13,7 @@ export const Filter = () => {
   return (
     <div className="filter">
       <h2 className="filter__title">Filter contacts</h2>
+      <div className="filter__bcg"></div>
       <div className="filter__form">
         <label className="filter__label">
           Find contacts by name
