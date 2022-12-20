@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { filterContacts, getContacts } from '../redux/contacts';
-import css from './App.module.scss';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -12,12 +11,19 @@ export const Filter = () => {
   }
 
   return (
-    <div className={css.form__filter}>
-      <label className={css.form__label}>
-        Find contacts by name
-        <input name="filter" onChange={onFilterChange}></input>
-      </label>
-      <div>Total contacts: {contactList.length}</div>
+    <div className="filter">
+      <h2 className="filter__title">Filter contacts</h2>
+      <div className="filter__form">
+        <label className="filter__label">
+          Find contacts by name
+          <input
+            className="filter__input"
+            name="filter"
+            onChange={onFilterChange}
+          ></input>
+        </label>
+        <p className="filter__descr">Total contacts: {contactList.length}</p>
+      </div>
     </div>
   );
 };

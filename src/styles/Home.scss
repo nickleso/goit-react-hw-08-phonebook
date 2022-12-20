@@ -1,0 +1,21 @@
+.home {
+  text-align: center;
+  font-size: 24px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
+
+  &__title {
+    padding-bottom: 48px;
+  }
+
+  &__wrap {
+    height: 70vh;
+    background-image: url(../images/group6.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: top;
+    background-position-x: 50%;
+  }
+}

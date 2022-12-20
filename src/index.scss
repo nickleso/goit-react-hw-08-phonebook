@@ -1,5 +1,10 @@
-@import-normalize; /* bring in normalize.css styles */
-@import './components/App.module.scss';
+@import-normalize;
+@import './styles/App.module.scss';
+@import './styles/Home.scss';
+@import './styles/Header.scss';
+@import './styles/Contacts.scss';
+@import './styles/Filter.scss';
+@import './styles/ContactsList.scss';
 
 body {
   margin: 0;
@@ -69,4 +74,18 @@ img {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

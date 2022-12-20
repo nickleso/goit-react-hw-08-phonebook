@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts, getContacts, getFilter } from '../redux/contacts';
 import { Contacts } from './Contacts';
-import css from './App.module.scss';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -28,12 +27,15 @@ export const ContactList = () => {
   const visibleContacts = getFiltredContacts();
 
   return (
-    <ul className={css.contact__list}>
-      {visibleContacts.map(contact => (
-        <li className={css.contact__item} key={contact.id}>
-          <Contacts contact={contact} />
-        </li>
-      ))}
-    </ul>
+    <div className="contactsList">
+      <h2 className="contactsList__title">Contacts list</h2>
+      <ul className="contactsList__form">
+        {visibleContacts.map(contact => (
+          <li className="contactsList__label" key={contact.id}>
+            <Contacts contact={contact} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
