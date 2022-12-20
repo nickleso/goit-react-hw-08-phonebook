@@ -7,6 +7,8 @@ export const UserMenu = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
+  const onLogOut = () => dispatch(logOut());
+
   return (
     <>
       <NavLink className="nav-link" to="contacts">
@@ -17,11 +19,7 @@ export const UserMenu = () => {
           Welcome,<span>{user.name}</span>
         </p>
 
-        <button
-          type="button"
-          className="login__button"
-          onClick={() => dispatch(logOut())}
-        >
+        <button type="button" className="login__button" onClick={onLogOut}>
           Logout
         </button>
       </div>
