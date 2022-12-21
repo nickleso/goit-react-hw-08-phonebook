@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../redux/contacts';
+import { deleteContact } from '../redux/contacts/operations';
 import { TiDeleteOutline } from 'react-icons/ti';
 
 export const Contacts = ({ contact }) => {

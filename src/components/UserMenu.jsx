@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUser } from 'redux/auth';
+import { selectUser } from 'redux/auth/selectors';
 import { logOut } from 'redux/auth/operations';
 
 export const UserMenu = () => {

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { logIn } from 'redux/auth';
+import { logIn } from 'redux/auth/operations';
 import { BiPencil } from 'react-icons/bi';
 
 const LoginForm = () => {

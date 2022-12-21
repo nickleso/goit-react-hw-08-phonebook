@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth';
+import { register } from 'redux/auth/operations';
 import { BiPencil } from 'react-icons/bi';
 
 const RegisterForm = () => {
