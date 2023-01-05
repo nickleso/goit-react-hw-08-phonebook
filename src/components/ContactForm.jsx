@@ -42,8 +42,8 @@ export const ContactForm = () => {
             type="text"
             name="name"
             placeholder="Name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            pattern="[a-zA-Z][a-zA-Z0-9-_.\s]{1,17}"
+            title="Only letters (either case), numbers, hyphens, underscores, and periods. The username must start with a letter and must be between 1 and 17 characters long."
             required
           />
         </label>
