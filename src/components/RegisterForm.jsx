@@ -59,8 +59,8 @@ const RegisterForm = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
-                pattern="\w{7,16}"
-                title="Password requires 8-16 characters"
+                pattern="\w{4,8}"
+                title="Password requires 4-8 characters"
                 required
               />
             </label>
